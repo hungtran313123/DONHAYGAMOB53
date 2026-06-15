@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ĐỘ NHẠY CHUẨN OB53 VIP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Orbitron:wght@800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --panel-bg: rgba(10, 10, 12, 0.93);
+            --text-main: #ffffff;
+            --text-sub: #a1a1aa;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: var(--text-main);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Canvas hiệu ứng bông tuyết ❄ rơi dày lung linh */
+        #snowCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* VIỀN BẢNG ĐƯỢC THIẾT KẾ LẠI: TO HƠN, ĐẬM HƠN, PHÁT SÁNG HOÀNG GIA SANG TRỌNG */
+        .container {
+            background: var(--panel-bg);
+            backdrop-filter: blur(35px);
+            -webkit-backdrop-filter: blur(35px);
+            
+            /* Tăng độ dày viền lên hẳn 4px để tạo độ khối nổi bật */
+            border: 4px solid #ffffff; 
+            border-radius: 28px;
+            padding: 42px 30px;
+            width: 340px;
+            text-align: center;
+            z-index: 10;
+            position: relative;
+            
+            /* Đổ bóng hào quang nhiều lớp (Multi-layer Glow) cực mạnh và sang trọng */
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2), 
+                        0 0 50px rgba(212, 175, 55, 0.15), /* Ánh vàng gold hoàng gia */
+                        0 30px 70px rgba(0, 0, 0, 0.95),
+                        inset 0 0 20px rgba(255, 255, 255, 0.05);
+            
+            /* Hiệu ứng chuyển động ánh sáng mượt mà ở viền */
+            animation: supremeGlow 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes supremeGlow {
+            0% {
+                border-color: rgba(255, 255, 255, 0.7);
+                box-shadow: 0 0 25px rgba(255, 255, 255, 0.25), 0 0 50px rgba(212, 175, 55, 0.15), 0 30px 70px rgba(0, 0, 0, 0.95);
+            }
+            50% {
+                border-color: #d4af37; /* Đổi sang viền vàng bạch kim sang trọng */
+                box-shadow: 0 0 35px rgba(212, 175, 55, 0.45), 0 0 70px rgba(212, 175, 55, 0.2), 0 30px 70px rgba(0, 0, 0, 0.95);
+            }
+            100% {
+                border-color: #38bdf8; /* Đổi sang viền xanh sapphire huyền bí */
+                box-shadow: 0 0 30px rgba(56, 189, 248, 0.4), 0 0 60px rgba(56, 189, 248, 0.15), 0 30px 70px rgba(0, 0, 0, 0.95);
+            }
+        }
+
+        /* PHÔNG CHỮ TIÊU ĐỀ: ĐẸP, ĐẬM, NÉT CĂNG DỄ NHÌN */
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 21px;
+            font-weight: 900;
+            margin-top: 0;
+            margin-bottom: 28px;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Khung tìm kiếm */
+        .search-box {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* Ô nhập tên máy */
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+            background: rgba(20, 20, 24, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            outline: none;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        /* NÚT BẤM "PHÂN TÍCH THIẾT BỊ" SỬ DỤNG PHÔNG MỚI DỄ NHÌN, SANG TRỌNG */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #ffffff; 
+            border: none;
+            border-radius: 14px;
+            color: #000000; 
+            
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
+            transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .btn:hover {
+            background: #f4f4f5;
+            box-shadow: 0 0 35px rgba(255, 255, 255, 0.6);
+            transform: translateY(-1px);
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        /* Bảng hiển thị thông số độ nhạy */
+        .result-box {
+            margin-top: 25px;
+            text-align: left;
+            display: none; 
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        /* Tiêu đề bảng kết quả đồng bộ dễ nhìn */
+        .result-title {
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 22px;
+            border-left: 4px solid #ffffff;
+            padding-left: 10px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .stat-group {
+            margin-bottom: 18px;
+        }
+
+        /* Chữ của các dòng độ nhạy lịch sự, mảnh gọn */
+        .stat-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-sub);
+            margin-bottom: 6px;
+        }
+
+        .stat-info .num-val {
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        /* Thanh nền chứa slider */
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        /* Thanh độ nhạy 7 màu cầu vồng quét sáng liên tục */
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ff0055, #ff5500, #ffcc00, #33ff00, #00ffff, #0022ff, #7700ff, #ff0055);
+            background-size: 200% 100%;
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            transition: width 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            animation: rainbowFlow 2s linear infinite;
+        }
+
+        @keyframes rainbowFlow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        /* Chữ thông báo quét hệ thống */
+        .loading {
+            display: none;
+            margin-top: 30px;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.4;
+            animation: pulse 1.2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="snowCanvas"></canvas>
+
+    <div class="container">
+        <h2>ĐỘ NHẠY CHUẨN OB53 VIP</h2>
+        
+        <div class="search-box">
+            <input type="text" id="deviceInput" placeholder="Nhập tên thiết bị 📱" autocomplete="off">
+            <button class="btn" onclick="searchSensitivity()">PHÂN TÍCH THIẾT BỊ</button>
+        </div>
+        
+        <div class="loading" id="loadingText">❄️ Hệ thống chúng tôi đang phân tích độ nhạy vui lòng chờ đợi...</div>
+
+        <div class="result-box" id="resultBox">
+            <div class="result-title" id="displayDeviceName">KẾT QUẢ PHÂN TÍCH THIẾT BỊ</div>
+            
+            <div class="stat-group">
+                <div class="stat-info"><span>Nhìn xung quanh</span> <span class="num-val" id="xungQuanh">0</span></div>
+                <div class="progress-container"><div class="progress-bar" id="barXungQuanh"></div></div>
+            </div>
+
+            <div class="stat-group">
+                <div class="stat-info"><span>Ống ngắm hồng tâm</span> <span class="num-val" id="hongTam">0</span></div>
+                <div class="progress-container"><div class="progress-bar" id="barHongTam"></div></div>
+            </div>
+
+            <div class="stat-group">
+                <div class="stat-info"><span>Ống ngắm 2x</span> <span class="num-val" id="scope2x">0</span></div>
+                <div class="progress-container"><div class="progress-bar" id="barScope2x"></div></div>
+            </div>
+
+            <div class="stat-group">
+                <div class="stat-info"><span>Ống ngắm 4x</span> <span class="num-val" id="scope4x">0</span></div>
+                <div class="progress-container"><div class="progress-bar" id="barScope4x"></div></div>
+            </div>
+
+            <div class="stat-group">
+                <div class="stat-info"><span>Ống ngắm súng ngắm</span> <span class="num-val" id="sungNgam">0</span></div>
+                <div class="progress-container"><div class="progress-bar" id="barSungNgam"></div></div>
+            </div>
+
+            <div class="stat-group">
+                <div class="stat-info"><span>Nút camera tự do</span> <span class="num-val" id="cameraTuDo">0</span></div>
+                <div class="progress-container"><div class="progress-bar" id="barCameraTuDo"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. HIỆU ỨNG BÔNG TUYẾT ❄ RƠI DÀY MƯỢT MÀ ---
+        const canvas = document.getElementById('snowCanvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        const maxFlakes = 85; 
+        const flakes = [];
+
+        class Snowflake {
+            constructor() { this.reset(); this.y = Math.random() * height; }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = -30;
+                this.fontSize = Math.random() * 11 + 9; 
+                this.speed = Math.random() * 0.5 + 0.3; 
+                this.opacity = Math.random() * 0.5 + 0.25; 
+                this.spin = Math.random() * 0.02 - 0.01;  
+                this.angle = Math.random() * Math.PI * 2;
+            }
+            update() {
+                this.y += this.speed;
+                this.angle += this.spin; 
+                this.x += Math.sin(this.y / 40) * 0.3; 
+                
+                if (this.y > height + 20 || this.x > width + 20 || this.x < -20) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.angle); 
+                
+                ctx.shadowBlur = 6;
+                ctx.shadowColor = "rgba(255, 255, 255, 0.4)";
+                
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.font = `${this.fontSize}px Arial, sans-serif`;
+                ctx.textBaseline = 'middle';
+                ctx.textAlign = 'center';
+                
+                ctx.fillText('❄', 0, 0);
+                ctx.restore();
+            }
+        }
+
+        for (let i = 0; i < maxFlakes; i++) flakes.push(new Snowflake());
+        
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            flakes.forEach(flake => { flake.update(); flake.draw(); });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+
+        // --- 2. XỬ LÝ SỐ NGẪU NHIÊN THEO MỐC KHOẢNG ĐÃ ĐỊNH ---
+        function getRandomValue(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function searchSensitivity() {
+            const inputEl = document.getElementById('deviceInput');
+            const loadingText = document.getElementById('loadingText');
+            const resultBox = document.getElementById('resultBox');
+            const displayTitle = document.getElementById('displayDeviceName');
+
+            const deviceName = inputEl.value.trim();
+
+            if (deviceName === "") {
+                alert("Vui lòng nhập tên thiết bị của bạn!");
+                return;
+            }
+
+            resultBox.style.display = 'none';
+            resultBox.style.opacity = '0';
+            resultBox.style.transform = 'translateY(10px)';
+            
+            document.querySelectorAll('.progress-bar').forEach(bar => bar.style.width = '0%');
+            
+            loadingText.style.display = 'block';
+
+            setTimeout(() => {
+                loadingText.style.display = 'none';
+                resultBox.style.display = 'block';
+
+                displayTitle.innerText = `PHÂN TÍCH THIẾT BỊ: ${deviceName.toUpperCase()}`;
+
+                const valXungQuanh = getRandomValue(150, 199);
+                const valHongTam   = getRandomValue(100, 180);
+                const valScope2x   = getRandomValue(100, 180);
+                const valScope4x   = getRandomValue(100, 180);
+                const valSungNgam  = getRandomValue(100, 180);
+                const valCamera    = getRandomValue(100, 180);
+
+                document.getElementById('xungQuanh').innerText = valXungQuanh;
+                document.getElementById('hongTam').innerText   = valHongTam;
+                document.getElementById('scope2x').innerText   = valScope2x;
+                document.getElementById('scope4x').innerText   = valScope4x;
+                document.getElementById('sungNgam').innerText  = valSungNgam;
+                document.getElementById('cameraTuDo').innerText = valCamera;
+
+                setTimeout(() => {
+                    resultBox.style.opacity = '1';
+                    resultBox.style.transform = 'translateY(0)';
+                    
+                    document.getElementById('barXungQuanh').style.width = (valXungQuanh / 200 * 100) + '%';
+                    document.getElementById('barHongTam').style.width   = (valHongTam / 200 * 100) + '%';
+                    document.getElementById('barScope2x').style.width   = (valScope2x / 200 * 100) + '%';
+                    document.getElementById('barScope4x').style.width   = (valScope4x / 200 * 100) + '%';
+                    document.getElementById('barSungNgam').style.width  = (valSungNgam / 200 * 100) + '%';
+                    document.getElementById('barCameraTuDo').style.width = (valCamera / 200 * 100) + '%';
+                }, 50);
+
+            }, 2000); 
+        }
+
+        document.getElementById('deviceInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                searchSensitivity();
+            }
+        });
+    </script>
+</body>
+</html>
