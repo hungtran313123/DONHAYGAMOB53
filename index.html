@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ĐỘ NHẠY CHUẨN OB53 VIP</title>
+    <title>ĐỘ NHẠY CHUẨN OB54 VIP</title>
+    <!-- Nhúng Font chữ hiện đại, sắc nét và dễ nhìn từ Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Orbitron:wght@800;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -27,7 +28,7 @@
             position: relative;
         }
 
-        /* Canvas hiệu ứng bông tuyết ❄ rơi dày lung linh */
+        /* Canvas hiệu ứng bông tuyết ❄ rơi dày lung linh trở lại */
         #snowCanvas {
             position: absolute;
             top: 0;
@@ -38,13 +39,12 @@
             pointer-events: none;
         }
 
-        /* VIỀN BẢNG ĐƯỢC THIẾT KẾ LẠI: TO HƠN, ĐẬM HƠN, PHÁT SÁNG HOÀNG GIA SANG TRỌNG */
+        /* VIỀN BẢNG PHÁT SÁNG HOÀNG GIA SANG TRỌNG */
         .container {
             background: var(--panel-bg);
             backdrop-filter: blur(35px);
             -webkit-backdrop-filter: blur(35px);
             
-            /* Tăng độ dày viền lên hẳn 4px để tạo độ khối nổi bật */
             border: 4px solid #ffffff; 
             border-radius: 28px;
             padding: 42px 30px;
@@ -53,13 +53,12 @@
             z-index: 10;
             position: relative;
             
-            /* Đổ bóng hào quang nhiều lớp (Multi-layer Glow) cực mạnh và sang trọng */
+            /* Đổ bóng hào quang nhiều lớp cực mạnh */
             box-shadow: 0 0 25px rgba(255, 255, 255, 0.2), 
-                        0 0 50px rgba(212, 175, 55, 0.15), /* Ánh vàng gold hoàng gia */
+                        0 0 50px rgba(212, 175, 55, 0.15), 
                         0 30px 70px rgba(0, 0, 0, 0.95),
                         inset 0 0 20px rgba(255, 255, 255, 0.05);
             
-            /* Hiệu ứng chuyển động ánh sáng mượt mà ở viền */
             animation: supremeGlow 6s ease-in-out infinite alternate;
         }
 
@@ -69,16 +68,16 @@
                 box-shadow: 0 0 25px rgba(255, 255, 255, 0.25), 0 0 50px rgba(212, 175, 55, 0.15), 0 30px 70px rgba(0, 0, 0, 0.95);
             }
             50% {
-                border-color: #d4af37; /* Đổi sang viền vàng bạch kim sang trọng */
+                border-color: #d4af37; 
                 box-shadow: 0 0 35px rgba(212, 175, 55, 0.45), 0 0 70px rgba(212, 175, 55, 0.2), 0 30px 70px rgba(0, 0, 0, 0.95);
             }
             100% {
-                border-color: #38bdf8; /* Đổi sang viền xanh sapphire huyền bí */
+                border-color: #38bdf8; 
                 box-shadow: 0 0 30px rgba(56, 189, 248, 0.4), 0 0 60px rgba(56, 189, 248, 0.15), 0 30px 70px rgba(0, 0, 0, 0.95);
             }
         }
 
-        /* PHÔNG CHỮ TIÊU ĐỀ: ĐẸP, ĐẬM, NÉT CĂNG DỄ NHÌN */
+        /* PHÔNG CHỮ TIÊU ĐỀ */
         h2 {
             font-family: 'Montserrat', sans-serif;
             font-size: 21px;
@@ -121,7 +120,7 @@
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
         }
 
-        /* NÚT BẤM "PHÂN TÍCH THIẾT BỊ" SỬ DỤNG PHÔNG MỚI DỄ NHÌN, SANG TRỌNG */
+        /* NÚT BẤM "PHÂN TÍCH THIẾT BỊ" */
         .btn {
             display: block;
             width: 100%;
@@ -162,7 +161,6 @@
             transform: translateY(10px);
         }
 
-        /* Tiêu đề bảng kết quả đồng bộ dễ nhìn */
         .result-title {
             color: #ffffff;
             font-family: 'Montserrat', sans-serif;
@@ -180,7 +178,6 @@
             margin-bottom: 18px;
         }
 
-        /* Chữ của các dòng độ nhạy lịch sự, mảnh gọn */
         .stat-info {
             display: flex;
             justify-content: space-between;
@@ -195,7 +192,6 @@
             color: #ffffff;
         }
 
-        /* Thanh nền chứa slider */
         .progress-container {
             width: 100%;
             height: 6px;
@@ -204,7 +200,6 @@
             overflow: hidden;
         }
 
-        /* Thanh độ nhạy 7 màu cầu vồng quét sáng liên tục */
         .progress-bar {
             height: 100%;
             width: 0%;
@@ -221,7 +216,6 @@
             100% { background-position: 200% 50%; }
         }
 
-        /* Chữ thông báo quét hệ thống */
         .loading {
             display: none;
             margin-top: 30px;
@@ -240,10 +234,11 @@
 </head>
 <body>
 
+    <!-- Đã trả lại canvas tuyết rơi cũ -->
     <canvas id="snowCanvas"></canvas>
 
     <div class="container">
-        <h2>ĐỘ NHẠY CHUẨN OB53 VIP</h2>
+        <h2>ĐỘ NHẠY CHUẨN OB54 VIP</h2>
         
         <div class="search-box">
             <input type="text" id="deviceInput" placeholder="Nhập tên thiết bị 📱" autocomplete="off">
@@ -288,7 +283,7 @@
     </div>
 
     <script>
-        // --- 1. HIỆU ỨNG BÔNG TUYẾT ❄ RƠI DÀY MƯỢT MÀ ---
+        // --- 1. HIỆU ỨNG BÔNG TUYẾT ❄ RƠI DÀY TRỞ LẠI ---
         const canvas = document.getElementById('snowCanvas');
         const ctx = canvas.getContext('2d');
         let width = canvas.width = window.innerWidth;
@@ -350,7 +345,7 @@
         animate();
 
 
-        // --- 2. XỬ LÝ SỐ NGẪU NHIÊN THEO MỐC KHOẢNG ĐÃ ĐỊNH ---
+        // --- 2. XỬ LÝ KẾT QUẢ ĐỘ NHẠY ---
         function getRandomValue(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
